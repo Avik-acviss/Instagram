@@ -1,9 +1,16 @@
+import time
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 chrome_options = webdriver.ChromeOptions()
+# chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--disable-gpu")
+# chrome_options.add_argument("--window-size=1920x1080")
+# chrome_options.add_argument("--no-sandbox")
+# chrome_options.add_argument("--disable-dev-shm-usage")
 driver = webdriver.Chrome(options=chrome_options)
 
 try:
@@ -52,12 +59,22 @@ try:
         bio = "NA"
 
     try:
+        bio1 = driver.find_element(By.XPATH, '//span[contains(@class, "_ap3a _aaco _aacu _aacx _aad7 _aade")]//span').text
+    except:
+        bio1 = "NA"
+
+    try:
+        bio2 = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//h1[contains(@class, '_ap3a _aaco _aacu _aacy _aad6 _aade')]"))).text
+    except:
+        bio2 = "NA"
+
+    try:
         external_links = driver.find_elements(By.XPATH, "//div[contains(@class, 'x6ikm8r x10wlt62')]/a")
         external_links = [link.get_attribute("href") for link in external_links]
     except:
         external_links = []
 
-    print(f"Profile Data: {profile_link}, {post_count} posts, {followers_count} followers, {following_count} following, Bio: {bio}, Links: {external_links}")
+    print(f"Profile Data: {profile_link}, {post_count} posts, {followers_count} followers, {following_count} following, Bio: {bio}, Bios: {bio1}, Bios1: {bio2}, Links: {external_links}")
 
     try:
         reels_section = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//a[contains(@href, "/reels/")]')))
@@ -115,6 +132,8 @@ try:
             "following": following_count,
             "posts": post_count,
             "bio": bio,
+            "bio1": bio1,
+            "bio2": bio2,
             "external_links": external_links,
             "reels": {
                 "link1": {
