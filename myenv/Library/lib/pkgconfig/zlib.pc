@@ -1,0 +1,13 @@
+prefix=D:/project/instagram/myenv/Library
+exec_prefix=D:/project/instagram/myenv/Library
+libdir=D:/project/instagram/myenv/Library/lib
+sharedlibdir=D:/project/instagram/myenv/Library/lib
+includedir=D:/project/instagram/myenv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

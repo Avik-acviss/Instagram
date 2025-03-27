@@ -1,0 +1,21 @@
+{
+    "shoe": {
+        "profile_link": "https://www.instagram.com/aldo_shoes/",
+        "followers": "4.1M followers",
+        "following": "2,154 following",
+        "posts": "7,438",
+        "bio": "Shopping & retail",
+        "external_links": [
+            "https://www.instagram.com/aldo_shoes/#"
+        ],
+        "detail": "Instagram Profile",
+        "reels": {
+            "link1": {
+                "url": "https://www.instagram.com/aldo_shoes/reel/DHoW6Ogp-ON/",
+                "likes": "183",
+                "first_comment": "@burkidie can take us out for a coffee stroll any day #ALDOCrew #ALDOShoesGermany",
+                "date": "2025-03-25T17:25:59.000Z"
+            }
+        }
+    }
+}
