@@ -139,7 +139,7 @@ try:
                 "link1": {
                     "url": video_link,
                     "likes": likes_text,
-                    "first_comment": first_comment,
+                    "description": first_comment,
                     "date": reel_date
                 }
             }
